@@ -6,7 +6,7 @@
         "description": ""
     },
     "paths": {
-        "/api/retreat/": {
+        "/api/retreats/": {
             "get": {
                 "summary": "Retreat",
                 "tags": [
@@ -53,7 +53,7 @@
                 }
             }
         },
-        "/api/booking/": {
+        "/api/book/": {
             "post": {
                 "summary": "Create a New Booking",
                 "tags": [
