@@ -1,0 +1,151 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "SPONSERS BOOST",
+        "version": "1.0.0",
+        "description": ""
+    },
+    "paths": {
+        "/api/retreat/": {
+            "get": {
+                "summary": "Retrieve All Clubs",
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Retrieve a list of all available clubs along with detailed information for each club, including the number of members and sponsors.",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The maximum number of clubs to retrieve per request.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The number of clubs to skip before starting to return clubs.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieval of the list of all clubs."
+                    },
+                    "401": {
+                        "description": "Unauthorized. Authentication failed."
+                    },
+                    "409": {
+                        "description": "Conflict error."
+                    },
+                    "400": {
+                        "description": "Bad Request. The request is malformed or missing required fields."
+                    },
+                    "500": {
+                        "description": "Internal Server Error. An unexpected error occurred on the server."
+                    }
+                }
+            }
+        },
+        "/api/booking/": {
+            "post": {
+                "summary": "Create a New Retreat",
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Create a new retreat with the provided details, including user information and retreat details.",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "user_id": {
+                                        "type": "string",
+                                        "description": "The ID of the user creating the retreat."
+                                    },
+                                    "user_name": {
+                                        "type": "string",
+                                        "description": "The name of the user creating the retreat."
+                                    },
+                                    "user_email": {
+                                        "type": "string",
+                                        "description": "The email address of the user creating the retreat."
+                                    },
+                                    "user_phone": {
+                                        "type": "string",
+                                        "description": "The phone number of the user creating the retreat."
+                                    },
+                                    "retreat_id": {
+                                        "type": "string",
+                                        "description": "The ID of the retreat."
+                                    },
+                                    "retreat_title": {
+                                        "type": "string",
+                                        "description": "The title of the retreat."
+                                    },
+                                    "retreat_location": {
+                                        "type": "string",
+                                        "description": "The location of the retreat."
+                                    },
+                                    "retreat_price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "description": "The price of the retreat."
+                                    },
+                                    "retreat_duration": {
+                                        "type": "number",
+                                        "description": "The duration of the retreat in days."
+                                    },
+                                    "payment_details": {
+                                        "type": "string",
+                                        "description": "Details of the payment for the retreat."
+                                    },
+                                    "booking_date": {
+                                        "type": "string",
+                                        "format": "date-time",
+                                        "description": "The date when the booking was made."
+                                    }
+                                },
+                                "required": [
+                                    "user_id",
+                                    "user_name",
+                                    "user_email",
+                                    "user_phone",
+                                    "retreat_id",
+                                    "retreat_title",
+                                    "retreat_location",
+                                    "retreat_price",
+                                    "retreat_duration"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Retreat successfully created."
+                    },
+                    "401": {
+                        "description": "Unauthorized. Authentication failed."
+                    },
+                    "409": {
+                        "description": "Conflict error."
+                    },
+                    "400": {
+                        "description": "Bad Request. The request is malformed or missing required fields."
+                    },
+                    "500": {
+                        "description": "Internal Server Error. An unexpected error occurred on the server."
+                    }
+                }
+            }
+        }
+    }
+}
