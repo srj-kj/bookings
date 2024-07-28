@@ -1,32 +1,33 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "SPONSERS BOOST",
+        "title": "Booking Task",
         "version": "1.0.0",
         "description": ""
     },
     "paths": {
         "/api/retreat/": {
             "get": {
-                "summary": "Retrieve All Clubs",
+                "summary": "Retreat",
                 "tags": [
-                    "Admin"
+                    "Retreat"
                 ],
                 "description": "Retrieve a list of all available clubs along with detailed information for each club, including the number of members and sponsors.",
                 "parameters": [
+                    
                     {
-                        "name": "limit",
+                        "name": "page",
                         "in": "query",
-                        "description": "The maximum number of clubs to retrieve per request.",
+                        "description": "Page number.",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "page",
+                        "name": "limit",
                         "in": "query",
-                        "description": "The number of clubs to skip before starting to return clubs.",
+                        "description": "The maximum number of dats to retrieve per request.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -56,7 +57,7 @@
             "post": {
                 "summary": "Create a New Retreat",
                 "tags": [
-                    "Admin"
+                    "Booking"
                 ],
                 "description": "Create a new retreat with the provided details, including user information and retreat details.",
                 "requestBody": {
