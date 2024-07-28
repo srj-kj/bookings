@@ -55,7 +55,7 @@
         },
         "/api/booking/": {
             "post": {
-                "summary": "Create a New Retreat",
+                "summary": "Create a New Booking",
                 "tags": [
                     "Booking"
                 ],
