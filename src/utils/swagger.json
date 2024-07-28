@@ -59,7 +59,7 @@
                 "tags": [
                     "Booking"
                 ],
-                "description": "Create a new retreat with the provided details, including user information and retreat details.",
+                "description": "Create a new Booking with the provided details, including user information and retreat details.",
                 "requestBody": {
                     "required": true,
                     "content": {
