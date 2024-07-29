@@ -7,7 +7,7 @@ import bookingComponent from './booking';
 
 
 router.use('/retreats', retreatComponent);
-router.use('/books', bookingComponent);
+router.use('/book', bookingComponent);
 
 
 
